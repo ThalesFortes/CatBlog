@@ -1,0 +1,288 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+
+  --hue:240;
+  --color-background:hsl(196, 100%, 98%);
+  --Brand-Colors-Explorer-dark: hsl(195, 91%, 25%);
+  --color-main:hsl(196, 100%, 98%);
+  --color-text:hsl(var(--hue), 5%, 7%);
+}
+
+body,html,input{
+  font-size: 1.6rem;
+  font-family: Mulish,sans-serif;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Brand-Colors-Explorer-dark);
+  gap: 2.5rem;
+  animation: move 0.7s backwards;
+  --mo: -100%;
+}
+
+header img{
+  width: 4.2rem;
+  border-radius: 50%;
+  margin: 1.6rem 2.8rem 1.6rem 0;
+}
+
+.logo{
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: var(--color-background);
+  padding: .6rem;
+  box-sizing: content-box;
+  border-radius: 50%;
+  margin: 1.6rem 0 1.6rem 2.8rem;
+}
+
+header form{
+ display: flex;
+ flex: 1;
+ flex-wrap: wrap;
+}
+
+header form label{
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+header form input{
+  padding: 1.2rem 1.4rem 1.2rem 1.4rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.20);
+  border: none;
+  flex: 1;
+}
+
+input::placeholder{
+  color: #FFF;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+main{
+  background-color: var(--color-main);
+}
+
+main .princ_imag{
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+h1{
+  margin:0  2.2rem 1rem;
+  color:  #202024;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+main img:nth-child(3){
+  margin-left: 20px;
+}
+
+.icons-wrapper{
+  margin-left: 2.2rem;
+}
+
+.icons{
+  background: var(--Brand-Colors-Explorer-dark);
+  border-radius: 50%;
+  padding: 12px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.icons:hover{
+  cursor: pointer;
+  transform:  rotate(-5deg) skewY(-5deg) scale(1.2);
+  filter: blur(0.3px);
+  transition: 0.6s;
+}
+
+.details{
+  color: var(--color-text);
+  font-weight: 400;
+  line-height: 160%;
+  margin: 0 2rem 3rem;
+}
+
+.details p{
+  margin-bottom: 3rem;
+}
+
+h2{
+  margin:0 2rem 3rem;
+}
+
+.artics{
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 2rem 3rem;
+}
+
+.resume h3:hover{
+  cursor: pointer;
+  color: rgb(81, 81, 224);
+  transition: 1s;
+}
+
+.artics img:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 1s;
+  filter: saturate(2) ;
+}
+
+.resume{
+  width: 100%;
+}
+
+.resume h3{
+  color:  #202024;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.resume p{
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 160%; /* 22.4px */
+  text-align: start;
+  margin: 0;
+}
+
+footer{
+  padding: 16px;
+  background: rgb(55, 125, 149);
+  color: #FFF;
+  text-align: center;
+  font-weight: 600;
+  animation: move 0.7s backwards;
+  --mo:100%;
+}
+
+@keyframes move{
+  0%{
+    transform: translateY(var(--mo));
+  }
+}
+
+
+@media (min-width:870px){
+  #app{
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    height: 100vh;
+  }
+ 
+  .container{
+    margin: 4rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  main .princ_imag{
+    width: 50%;
+    display: flex;
+    object-fit: cover;
+    margin-bottom: 30px;
+  }
+
+  .container::after {
+    content: '';
+    position: absolute;
+    overflow: hidden;
+    right: 5%;
+    top: 0%;
+    width: 36rem;
+    height: 33rem;
+    background-image: url('assets/catnaut.jpg');
+    filter: opacity(3%) contrast(100%);
+  }
+
+  .container:hover::after{
+    filter: opacity(30%) ;
+    transition: 0.8s ease;
+  }
+  
+  aside{
+    margin:0 7rem;
+  }
+
+}
+
+@media (min-width:1100px){
+  #app{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "main main aside"
+    "footer footer footer";
+    height: 100vh;
+  }
+
+  header{
+    grid-area: header;
+  }
+
+  main{
+    display: flex;
+    gap: 3rem;
+    grid-area: main;
+  }
+
+ 
+  .container{
+    margin: 4rem 0 4rem 7rem;
+    width: 60vw;
+  }
+
+  aside{
+    margin: 4rem 0;
+    grid-area: aside;
+  }
+
+  footer{
+    grid-area: footer;
+  }
+
+  main .princ_imag{
+    width: 100%;
+    display: flex;
+    object-fit: cover;
+    margin-bottom: 30px;
+  }
+
+  .container::after {
+    content: '';
+    position: absolute;
+    right: 5%;
+    top: 0%;
+    width: 1px;
+    height: 1px;
+    background-image: url('assets/catnaut.jpg');
+    filter: opacity(0%);
+  }
+
+}
