@@ -19,8 +19,6 @@ Blog de gato criad utilizando css, html totalmente responsivel e estilizado com 
 - HTML 
 - CSS
 
-[Clique aqui para acessar](https://thalesfortes.github.io/CatBlog/)
-
 # Autor
 
 Thales de Abreu Fortes da Silva
